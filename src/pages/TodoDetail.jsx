@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -14,6 +14,8 @@ const TodoDetail = () => {
                 onClick={() => navigate(-1)}
                 >이전으로</StButton>
             </StDetailTop>
+            <StTitle>{}</StTitle>
+            <StContent>{}</StContent>
 
         </StTodoDetailContainer>
         
@@ -30,10 +32,16 @@ const StTodoDetailContainer = styled.div`
     margin: 15% auto;
 `
 
-const StDetailTop = styled.div`   
+const StDetailTop = styled.div`
+    display: flex;
+    justify-content: space-between
 `
 const StTodoId = styled.div`    
 `
-const StButton = styled.div`
+const StButton = styled.div`    
+`
+const StTitle = styled.div`
+`
+const StContent = styled.div`
     
 `
