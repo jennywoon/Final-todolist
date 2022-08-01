@@ -1,4 +1,5 @@
-import React, { useDispatch, useState } from "react"
+import React, { useState } from "react"
+import {useDispatch} from "react-redux"
 import styled from "styled-components"
 import { addTodo } from "../redux/modules/todos"
 
@@ -34,7 +35,7 @@ const Form = () => {
 
     return (
         <StFormContainer onSubmit={onSubmitHandler}>
-            <lable>제목</lable>
+            <label>제목</label>
             <StInput type="text" value={title} onChange={handleInputTitle}></StInput>
             <label>내용</label>
             <StInput type="text" value={content} onChange={handleInputContent}></StInput>
