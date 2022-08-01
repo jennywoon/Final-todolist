@@ -13,14 +13,12 @@ const List = ({ handleDelete, handleDone }) => {
             <StListCard>
                 {todos.map((todo) =>
                     todo.isDone === false ? (
-                        <div>
                             <Todo
                                 todo={todo}
                                 key={todo.id}
                                 handleDelete={handleDelete}
                                 handleDone={handleDone}
                             />
-                        </div>
                     ) : null
                 )}
 
@@ -29,14 +27,12 @@ const List = ({ handleDelete, handleDone }) => {
             <StListCard>
                 {todos.map((todo) =>
                     todo.isDone === true ? (
-                        <div>
                             <Todo
                                 todo={todo}
                                 key={todo.id}
                                 handleDelete={handleDelete}
                                 handleDone={handleDone}
                             />
-                        </div>
                     ) : null
                 )}
                 

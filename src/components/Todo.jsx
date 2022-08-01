@@ -16,15 +16,17 @@ const Todo = ({todo}) => {
                 <StTodoContent>{todo.content}</StTodoContent>
                 <StTodobuttons>
                     <button 
-                    onClick={(e) => {
-                        e.stopPropagation()
+                    onClick={() => {
+                        
                         dispatch(deleteTodo(todo.id))
                     }}>삭제하기</button>
                     <button
-                    onClick={(e) => {
-                        e.stopPropagation();
+                    onClick={() => {
+                        
                         dispatch(doneTodo(todo.id))
-                    }}>완료</button>
+                    }}>
+                    {todo.isDone === true ? "취소" : "완료"}
+                    </button>
                 </StTodobuttons>
         </StTodoContainer>
     );
