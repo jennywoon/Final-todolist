@@ -1,5 +1,5 @@
 import React from "react";
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux"
 import styled from "styled-components";
 import Todo from './Todo'
 
@@ -23,6 +23,7 @@ const List = ({ handleDelete, handleDone }) => {
                         </div>
                     ) : null
                 )}
+
             </StListCard>
             <StTitle>Done..! 🎉</StTitle>
             <StListCard>
@@ -38,23 +39,26 @@ const List = ({ handleDelete, handleDone }) => {
                         </div>
                     ) : null
                 )}
+
             </StListCard>
+
         </StListContainer>
     )
 }
 
 const StListContainer = styled.div`
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd;
     width: 20%;
     height: 100px;
     display: flex;
     align-items: center;
     padding: 0 24px;
-    border-radius: 12px;
+    border-radius: 12px; */
 `
 
 const StTitle = styled.div`
     font-weight: bold;
+    margin: 20px;
 `
 
 const StListCard = styled.div`
