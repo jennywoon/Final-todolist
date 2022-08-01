@@ -1,3 +1,4 @@
+import React from "react"
 import styled from "styled-components";
 
 const Header = () => {
@@ -15,6 +16,7 @@ const StHeaderContainer = styled.div`
     justify-content: space-between;
     border: 1px solid #ddd;
     padding: 0px 20px;
+
 
 `
 

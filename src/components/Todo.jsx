@@ -1,15 +1,18 @@
 import React, {useDispatch, useSelector} from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { deleteTodo, doneTodo } from "../redux/modules/todos";
 // import todos from "../redux/modules/todos";
 
 const Todo = (id) => {
     const todos = useSelector((state) => state.todos);
-    const dispatch = useDispatch;
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     return (
         <StTodoContainer>
             <Todo>
+                <p onClick={() => navigate(`/detail/:${id}`)}>상세보기</p>
                 <StTodoTitle>{todos.title}</StTodoTitle>
                 <StTodoContent>{todos.content}</StTodoContent>
                 <StTodobuttons>

@@ -2,7 +2,7 @@
 // Action Value
 
 const ADD_TODO = "ADD_TODO"
-const DELETE_TODO = "DELETO_TODO"
+const DELETE_TODO = "DELETE_TODO"
 const DONE_TODO = "DONE_TODO"
 
 // Action Creator

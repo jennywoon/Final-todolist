@@ -1,15 +1,12 @@
+import React from "react";
 import styled from "styled-components";
+import Header from "./Header"
 
-
-import Header from "./Header";
-
-
-const Layout = () => {
+const Layout = ({children}) => {
     return(
         <StLayoutContainer>
             <Header/>
-
-            {/* {children} */}
+            <StContents>{children}</StContents>
         </StLayoutContainer>
     )
 }
@@ -22,5 +19,7 @@ const StLayoutContainer = styled.div`
     border: 1px solid green;
 
 `
+
+const StContents = styled.div``
 
 export default Layout;

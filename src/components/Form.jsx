@@ -19,7 +19,9 @@ const Form = () => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
+        
         if (title === '') return;
+        
         dispatch(
             addTodo({
                 id: Date.now(),
