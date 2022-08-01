@@ -25,6 +25,7 @@ const Form = () => {
                 id: Date.now(),
                 title,
                 content,
+                isDone : false,
             })
         );
     };
