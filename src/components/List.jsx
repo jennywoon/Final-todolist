@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useSelector} from "react";
 import styled from "styled-components";
+import Todo from './Todo'
 
-const List = ({ todos, handleDelete, handleDone }) => {
+const List = ({ handleDelete, handleDone }) => {
     const todos = useSelector((state) => state.todos)
 
 
