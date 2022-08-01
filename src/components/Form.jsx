@@ -21,7 +21,7 @@ const Form = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         
-        if (title === '') return;
+        if (title === '' && content === '') return;
         
         dispatch(
             addTodo({

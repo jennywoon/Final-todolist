@@ -1,28 +1,29 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { deleteTodo, doneTodo } from "../redux/modules/todos";
-// import todos from "../redux/modules/todos";
 
-const Todo = (id) => {
-    const todos = useSelector((state) => state.todos);
+const Todo = ({todo}) => {
+
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
     return (
         <StTodoContainer>
-                <p onClick={() => navigate(`/detail/:${id}`)}>상세보기</p>
-                <StTodoTitle>{todos.title}</StTodoTitle>
-                <StTodoContent>{todos.content}</StTodoContent>
+                <p onClick={() => navigate(`/detail/:${todo.id}`)}>상세보기</p>
+                <StTodoTitle>{todo.title}</StTodoTitle>
+                <StTodoContent>{todo.content}</StTodoContent>
                 <StTodobuttons>
                     <button 
-                    onClick={() => {
-                        dispatch(deleteTodo(id))
+                    onClick={(e) => {
+                        e.stopPropagation()
+                        dispatch(deleteTodo(todo.id))
                     }}>삭제하기</button>
                     <button
-                    onClick={() => {
-                        dispatch(doneTodo(id))
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        dispatch(doneTodo(todo.id))
                     }}>완료</button>
                 </StTodobuttons>
         </StTodoContainer>

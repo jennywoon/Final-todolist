@@ -39,7 +39,7 @@ const List = ({ handleDelete, handleDone }) => {
                         </div>
                     ) : null
                 )}
-
+                
             </StListCard>
 
         </StListContainer>
