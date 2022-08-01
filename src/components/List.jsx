@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const List = ({todos, handleDelete, handleDone}) => {
+const List = ({ todos, handleDelete, handleDone }) => {
     const todos = useSelector((state) => state.todos)
 
 
@@ -42,11 +42,23 @@ const List = ({todos, handleDelete, handleDone}) => {
 }
 
 const StListContainer = styled.div`
-    
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-radius: 12px;
+`
+
+const StTitle = styled.div`
+    font-weight: bold;
 `
 
 const StListCard = styled.div`
-    
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 `
 
 
