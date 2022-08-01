@@ -19,6 +19,7 @@ const StLayoutContainer = styled.div`
     min-width: 800px;
     margin: 0 auto;
     box-sizing: content-box;
+    border: 1px solid green;
 
 `
 

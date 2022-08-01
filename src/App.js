@@ -1,11 +1,9 @@
 
+import { Router } from 'react-router-dom';
 import './App.css';
-import TodoList from './pages/TodoList';
 
 function App() {
-  return (
-    <TodoList/>
-  );
+  return <Router/>
 }
 
 export default App;
