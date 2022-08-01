@@ -12,7 +12,6 @@ const Todo = (id) => {
 
     return (
         <StTodoContainer>
-            <Todo>
                 <p onClick={() => navigate(`/detail/:${id}`)}>상세보기</p>
                 <StTodoTitle>{todos.title}</StTodoTitle>
                 <StTodoContent>{todos.content}</StTodoContent>
@@ -26,7 +25,6 @@ const Todo = (id) => {
                         dispatch(doneTodo(id))
                     }}>완료</button>
                 </StTodobuttons>
-            </Todo>
         </StTodoContainer>
     );
 };
