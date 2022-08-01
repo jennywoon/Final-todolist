@@ -1,15 +1,14 @@
 import styled from "styled-components";
-import Form from "./Form";
+
 
 import Header from "./Header";
-import List from "./List";
+
 
 const Layout = () => {
     return(
         <StLayoutContainer>
             <Header/>
-            <Form/>
-            <List/>
+
             {/* {children} */}
         </StLayoutContainer>
     )
