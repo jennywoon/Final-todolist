@@ -28,6 +28,7 @@
  ┣ 📜reportWebVitals.js
  ┗ 📜setupTests.js
  ```
+
 ## 컴포넌트 구조
 
 * Detail.jsx : 라우터 할 TodoDetail 페이지의 상세 내용 기재
@@ -37,28 +38,32 @@
 * List : 투두리스트의 리스트 카드안에 들어갈 key 값
 * Todo : 투두리스트 리스트 카드 버튼 기능 구현 및 상세보기 링크 추가
 
-### pages 구조
+
+## pages 구조
 
 * TodoDetail.jsx : Detail 페이지와 연결
 * TodoList : Layout(Header 연결) 연결 및 Layout 안에 Form, List 연결
 
-### redux 구조
+
+## redux 구조
 
 * config
  * configStore.js : rootReduce 연결 페이지(모듈 안 todos 연결)
 * modules
  * todos.js : 액션 명령, 크리에이터, 리듀서 등 모듈 구성
 
-### shared 구조
+
+## shared 구조
 
 * Route.js : BrowserRouter, Routes, Route 설정 및 path 주소값 , element 설정
 
-### App.js
+
+## App.js
 
 * 라우터 연결
 
 
-### index.js
+## index.js
 
 ```c
 import React from 'react';
