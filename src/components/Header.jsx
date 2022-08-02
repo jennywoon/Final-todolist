@@ -16,8 +16,8 @@ const StHeaderContainer = styled.div`
     justify-content: space-between;
     border: 1px solid #ddd;
     padding: 0px 20px;
-
-
+    height: 60px
 `
+
 
 export default Header;

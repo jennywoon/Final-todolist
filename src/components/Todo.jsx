@@ -20,11 +20,25 @@ const Todo = ({ todo }) => {
                 <button
                     onClick={() => {
                         dispatch(deleteTodo(todo.id))
-                    }}>삭제하기</button>
+                    }}
+                    style = {{
+                        border: "1px solid red",
+                        borderRadius: "12px",
+                        width: "120px",
+                        height: "40px",
+                        }}
+                    >삭제하기</button>
                 <button
                     onClick={() => {
                         dispatch(doneTodo(todo.id))
-                    }}>
+                    }}
+                    style = {{
+                        border: "1px solid green",
+                        borderRadius: "12px",
+                        width: "120px",
+                        height: "40px"
+                    }}
+                    >
                     {todo.isDone === true ? "취소" : "완료"}
                 </button>
             </StTodobuttons>
@@ -33,18 +47,29 @@ const Todo = ({ todo }) => {
 };
 
 const StTodoContainer = styled.div`
-display: flex;
+/* display: flex; */
 gap: 12px;
 margin-top: 5px;
-width: 300px;
+width: 270px;
+min-height: 150px;
 padding: 30px;
-border: 3px solid #b0e0e6;
-border-radius: 8px;
-background-color: #fff;
+border: 4px solid teal;
+border-radius: 12px;
+flex-wrap: wrap;
 `;
 
-const StTodoTitle = styled.div``;
+const StTodoTitle = styled.div`
+font-size: 1.5em;
+font-weight: bold;
+margin: 0.83em 0 0.83em 0;
+
+`;
 const StTodoContent = styled.div``;
-const StTodobuttons = styled.div``;
+const StTodobuttons = styled.div`
+display: flex;
+justify-content: center;
+padding: 10px;
+gap: 12px;
+`;
 
 export default Todo;

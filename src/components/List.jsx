@@ -9,7 +9,7 @@ const List = ({ handleDelete, handleDone }) => {
 
     return (
         <StListContainer>
-            <StTitle>working.. 🔥</StTitle>
+            <StTitle>Working.. 🔥</StTitle>
             <StListCard>
                 {todos.map((todo) =>
                     todo.isDone === false ? (
@@ -50,17 +50,20 @@ const StListContainer = styled.div`
     align-items: center;
     padding: 0 24px;
     border-radius: 12px; */
+    padding: 0px 24px
 `
 
 const StTitle = styled.div`
     font-weight: bold;
-    margin: 20px;
+    margin: 20px 0px;
+    font-size: 1.5em;
 `
 
 const StListCard = styled.div`
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    min-height: 150px;
 `
 
 

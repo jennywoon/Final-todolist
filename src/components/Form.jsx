@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react"
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux"
 import styled from "styled-components"
 import { addTodo } from "../redux/modules/todos"
 
@@ -19,28 +19,33 @@ const Form = () => {
     }
 
     const nextId = useRef(0)
-    
+
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        
-        if (title === '' && content === '') return;
-        
+
+        if (title === '' || content === '') return;
+
         dispatch(
             addTodo({
                 id: (nextId.current += 1),
                 title,
                 content,
-                isDone : false,
+                isDone: false,
             })
         );
+        setTitle('')
+        setContent('')
     };
 
     return (
         <StFormContainer onSubmit={onSubmitHandler}>
-            <label>제목</label>
-            <StInput type="text" value={title} onChange={handleInputTitle}></StInput>
-            <label>내용</label>
-            <StInput type="text" value={content} onChange={handleInputContent}></StInput>
+            <StFormContent>
+                <Stlabel>제목</Stlabel>
+                <StInput type="text" value={title} onChange={handleInputTitle}></StInput>
+                <Stlabel>내용</Stlabel>
+                <StInput type="text" value={content} onChange={handleInputContent}></StInput>
+            </StFormContent>
+
             <StButton>추가하기</StButton>
         </StFormContainer>
     )
@@ -53,25 +58,39 @@ gap: 24px;
 padding: 30px;
 background-color: #eee;
 border-radius: 10px;
+margin-top: 24px;
+align-items: center;
+justify-content: space-between;
 `;
 
+const StFormContent = styled.div`
+    display:flex;
+    gap: 20px;
+    align-items: center;
+`
+
+const Stlabel = styled.div`
+    font-size: 16px;
+    font-weight: 700;
+`
+
 const StInput = styled.input`
-border: 1px solid #b0e0e6;
-margin: 0 24px;
-height: 25px;
-width: 300px;
-border-radius: 8px;
-outline: none;
-padding: 0 10px;
+height: 40px;
+width: 240px;
+border-radius: 12px;
+border: none;
+padding: 0 12px;
 `;
 
 const StButton = styled.button`
-border: 1px solid #b0e0e6;
-background-color: #fff;
-height: 25px;
+border: none;
+background-color: teal;
+height: 40px;
 cursor: pointer;
-width: 120px;
-border-radius: 8px;
+width: 140px;
+border-radius: 10px;
+font-weight: 700;
+color: white;
 &:hover {
 background-color: #b0e0e6;
 }
