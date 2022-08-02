@@ -28,70 +28,51 @@
  ┣ 📜reportWebVitals.js
  ┗ 📜setupTests.js
  ```
-## Available Scripts
+## 컴포넌트 구조
 
-In the project directory, you can run:
+* Detail.jsx : 라우터 할 TodoDetail 페이지의 상세 내용 기재
+* Form : 투두리스트의 [제목, 내용, 추가하기] 버튼 및 dispatch 해오는 값, 변경되는 setTitle~SetContent 등 기능 구현
+* Header : 투두리스트 맨 상단 헤더 모양 구현
+* Layout : 전체 내용이 들어갈 레이아웃 구현, 스타일 컴포넌트 전체 크기 설정, 안에 헤더 연결
+* List : 투두리스트의 리스트 카드안에 들어갈 key 값
+* Todo : 투두리스트 리스트 카드 버튼 기능 구현 및 상세보기 링크 추가
 
-### `yarn start`
+### pages 구조
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* TodoDetail.jsx : Detail 페이지와 연결
+* TodoList : Layout(Header 연결) 연결 및 Layout 안에 Form, List 연결
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### redux 구조
 
-### `yarn test`
+* config
+ * configStore.js : rootReduce 연결 페이지(모듈 안 todos 연결)
+* modules
+ * todos.js : 액션 명령, 크리에이터, 리듀서 등 모듈 구성
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### shared 구조
 
-### `yarn build`
+* Route.js : BrowserRouter, Routes, Route 설정 및 path 주소값 , element 설정
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### App.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* 라우터 연결
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### index.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```c
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+import store from './redux/config/configStore';
+import {Provider} from "react-redux"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Final-todolist
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+```
