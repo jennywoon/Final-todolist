@@ -1,6 +1,6 @@
 # 폴더 모양
 
-* practice
+📦project2
   * project2
     * node_modules
     * public
