@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react"
+import React, { useState} from "react"
 import { useDispatch } from "react-redux"
 import styled from "styled-components"
 import { addTodo } from "../redux/modules/todos"
 
+let nextId = 0;
 const Form = () => {
 
     const [title, setTitle] = useState('')
@@ -18,7 +19,8 @@ const Form = () => {
         setContent(e.target.value)
     }
 
-    const nextId = useRef(0)
+    // const nextId = useRef(0)
+    // console.log(nextId)
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -27,14 +29,15 @@ const Form = () => {
 
         dispatch(
             addTodo({
-                id: (nextId.current += 1),
+                // id: (nextId.current += 1),
+                id: nextId += 1,
                 title,
                 content,
                 isDone: false,
             })
         );
-        setTitle('')
-        setContent('')
+        // setTitle('')
+        // setContent('')
     };
 
     return (

@@ -1,10 +1,22 @@
 import React from "react"
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import OtherHousesIcon from '@mui/icons-material/OtherHouses';
+import { pink } from '@mui/material/colors';
 
 const Header = () => {
+
+    const navigate = useNavigate();
+
     return(
         <StHeaderContainer>
-            <p>My Todo List</p>
+            {/* <p
+            onClick={() => navigate(`/`)}
+            >My Todo List</p> */}
+            <OtherHousesIcon
+            onClick={() => navigate('/')}
+            sx={{ color: pink[500] }}
+            ></OtherHousesIcon>
             <p>React</p>
         </StHeaderContainer>
     )

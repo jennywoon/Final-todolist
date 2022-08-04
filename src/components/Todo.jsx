@@ -43,6 +43,7 @@ const Todo = ({ todo }) => {
                 </button>
             </StTodobuttons>
         </StTodoContainer>
+ 
     );
 };
 

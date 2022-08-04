@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import styled from "styled-components";
 import Todo from './Todo'
 
-const List = ({ handleDelete, handleDone }) => {
+const List = () => {
     const todos = useSelector((state) => state.todos)
 
 
@@ -16,8 +16,8 @@ const List = ({ handleDelete, handleDone }) => {
                             <Todo
                                 todo={todo}
                                 key={todo.id}
-                                handleDelete={handleDelete}
-                                handleDone={handleDone}
+                                // handleDelete={handleDelete}
+                                // handleDone={handleDone}
                             />
                     ) : null
                 )}
@@ -30,8 +30,8 @@ const List = ({ handleDelete, handleDone }) => {
                             <Todo
                                 todo={todo}
                                 key={todo.id}
-                                handleDelete={handleDelete}
-                                handleDone={handleDone}
+                                // handleDelete={handleDelete}
+                                // handleDone={handleDone}
                             />
                     ) : null
                 )}
