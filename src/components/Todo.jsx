@@ -19,10 +19,12 @@ const Todo = ({ todo }) => {
             <StTodobuttons>
                 <button
                     onClick={() => {
-                        dispatch(deleteTodo(todo.id))
+                        if(window.confirm("정말 삭제하시겠습니까?")){
+                            dispatch(deleteTodo(todo.id))
+                        }
                     }}
                     style = {{
-                        border: "1px solid red",
+                        borderColor: "#fd3e3e",
                         borderRadius: "12px",
                         width: "120px",
                         height: "40px",
@@ -33,13 +35,13 @@ const Todo = ({ todo }) => {
                         dispatch(doneTodo(todo.id))
                     }}
                     style = {{
-                        border: "1px solid green",
+                        borderColor: "#5be40d",
                         borderRadius: "12px",
                         width: "120px",
                         height: "40px"
                     }}
                     >
-                    {todo.isDone === true ? "취소" : "완료"}
+                    {todo.isDone === true ? "다시하기" : "완료하기"}
                 </button>
             </StTodobuttons>
         </StTodoContainer>
@@ -48,21 +50,27 @@ const Todo = ({ todo }) => {
 };
 
 const StTodoContainer = styled.div`
-/* display: flex; */
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 gap: 12px;
 margin-top: 5px;
 width: 270px;
 min-height: 150px;
 padding: 30px;
-border: 4px solid teal;
+border: 4px solid #eee;
 border-radius: 12px;
 flex-wrap: wrap;
+background-color: #eee;
+
 `;
 
 const StTodoTitle = styled.div`
 font-size: 1.5em;
 font-weight: bold;
 margin: 0.83em 0 0.83em 0;
+text-decoration: un
 
 `;
 const StTodoContent = styled.div``;

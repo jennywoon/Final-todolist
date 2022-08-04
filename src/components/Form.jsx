@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux"
 import styled from "styled-components"
 import { addTodo } from "../redux/modules/todos"
 
-let nextId = 0;
+
+let nextId = 2;
 const Form = () => {
 
     const [title, setTitle] = useState('')
@@ -47,9 +48,10 @@ const Form = () => {
                 <StInput type="text" value={title} onChange={handleInputTitle}></StInput>
                 <Stlabel>내용</Stlabel>
                 <StInput type="text" value={content} onChange={handleInputContent}></StInput>
+                <StButton>추가하기</StButton>
             </StFormContent>
 
-            <StButton>추가하기</StButton>
+            {/* <StButton>추가하기</StButton> */}
         </StFormContainer>
     )
 
@@ -63,7 +65,7 @@ background-color: #eee;
 border-radius: 10px;
 margin-top: 24px;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 `;
 
 const StFormContent = styled.div`
@@ -87,7 +89,7 @@ padding: 0 12px;
 
 const StButton = styled.button`
 border: none;
-background-color: teal;
+background-color: #fd3e3e;
 height: 40px;
 cursor: pointer;
 width: 140px;

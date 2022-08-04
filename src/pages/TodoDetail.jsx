@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 const TodoDetail = () => {
     return(
-        <Layout>
+        <Layout>   
             <Detail />
         </Layout>
     )

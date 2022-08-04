@@ -50,13 +50,17 @@ const StListContainer = styled.div`
     align-items: center;
     padding: 0 24px;
     border-radius: 12px; */
-    padding: 0px 24px
-`
+    padding: 0px 24px;
+    /* background-color: red; */
+
+` 
 
 const StTitle = styled.div`
     font-weight: bold;
     margin: 20px 0px;
     font-size: 1.5em;
+    display: flex;
+    justify-content: center;
 `
 
 const StListCard = styled.div`
@@ -64,6 +68,9 @@ const StListCard = styled.div`
     gap: 12px;
     flex-wrap: wrap;
     min-height: 150px;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
 `
 
 

@@ -24,8 +24,10 @@ const TodoDetail = () => {
                     >이전으로</StButton>
                 </StDetailTop>
                 {/* <StTitle>{detailTodo.title}</StTitle> */}
-                <h1>{detailTodo.title}</h1>
-                <StContent>{detailTodo.content}</StContent>
+                <StDetailBottom>
+                    <h1>제목 : {detailTodo.title}</h1>
+                    <StContent>내용 : {detailTodo.content}</StContent>
+                </StDetailBottom>
             </StTodoDetailContainer>
         </StBackContainer>
 
@@ -40,17 +42,18 @@ const StBackContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 `
 
 const StTodoDetailContainer = styled.div`
-    border: 1px solid #ddd;
+    border: 1px solid #fd3e3e;
     width: 600px;
     height: 400px;
     /* margin: 15% auto; */
     display: flex;
     flex-direction: column;
     padding : 30px;
+    border-radius: 20px;
     /* margin: auto; */
 `
 
@@ -60,11 +63,19 @@ const StDetailTop = styled.div`
     height: 80px;
     /* border: 1px solid red; */
 `
+
+const StDetailBottom = styled.div`
+display:flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+`
 const StTodoId = styled.div`    
 `
 
 const StButton = styled.div`
-border: 1px solid gray;
+background-color: #fd3e3e;
+color: white;
 height: 40px;
 width: 120px;
 cursor: pointer;

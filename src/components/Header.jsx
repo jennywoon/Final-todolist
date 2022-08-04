@@ -13,11 +13,14 @@ const Header = () => {
             {/* <p
             onClick={() => navigate(`/`)}
             >My Todo List</p> */}
+            <Stp>
             <OtherHousesIcon
             onClick={() => navigate('/')}
             sx={{ color: pink[500] }}
             ></OtherHousesIcon>
-            <p>React</p>
+            Jenny's Todo List
+            </Stp>
+            <Stp>React</Stp>
         </StHeaderContainer>
     )
 }
@@ -26,9 +29,17 @@ const StHeaderContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #ddd;
+    border: 3px solid #fd8e94;
     padding: 0px 20px;
-    height: 60px
+    height: 60px;
+    border-radius: 10px;
+`
+
+const Stp = styled.div`
+    display: flex;
+    align-items: center;
+    gap : 12px;
+    font-weight: bold;
 `
 
 

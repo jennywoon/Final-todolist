@@ -21,7 +21,26 @@ export const doneTodo = (id) => {
 
 // Initial State
 
-const initialState = [];
+const initialState = [
+    {
+		id: 1, // id는 모두 고유값이어야 합니다.
+		title: "리액트 초보 2조",
+		content: "열심히 공부중입니다",
+		isDone: false
+	},
+	{
+		id: 2, // id는 모두 고유값이어야 합니다.
+		title: "나청운, 정성일, 조수정",
+		content: "우리는 2조에요!",
+		isDone: false
+	},
+    {
+		id: 3, // id는 모두 고유값이어야 합니다.
+		title: "두번째 투두리스트",
+		content: "조금만 더 노력하자!",
+		isDone: false
+	}
+];
 
 // Reducer
 
